@@ -1,0 +1,23 @@
+<header class="navbar navbar-expand navbar-dark px-4 flex-column flex-md-row">
+
+  <a class="navbar-brand mr-md-2 mr-0" routerLink="/" aria-label="NG Bootstrap" (click)="navbarCollapsed = true">
+    <img src="../assets/movie.png" class="img-logo" alt="">
+    <span class="ml-2 d-xl-none d-lg-none d-md-none d-inline">ieie DB</span>
+  </a>
+
+  <div class="navbar-nav-scroll" [ngClass]="{'collapse': collapsed, 'navbar-collapse': true}" id="navbarNavDropdown" *ngIf="logged"> 
+    <ul class="navbar-nav flex-row">
+      <li class="nav-item" [routerLinkActive]="['active']">
+        <a class="nav-link" [routerLink]="['/filmes']" (click)="navbarCollapsed = true">Filmes</a>
+      </li>
+      <li class="nav-item" [routerLinkActive]="['active']">
+        <a class="nav-link" [routerLink]="['/series']" (click)="navbarCollapsed = true">Series</a>
+      </li>
+    </ul>
+  </div>
+
+</header>
+&nbsp;
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
