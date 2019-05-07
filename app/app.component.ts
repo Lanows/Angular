@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { delay } from 'rxjs/operators';
 import { AccountService } from './services/account.service';
 import { Router } from '@angular/router';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
@@ -15,7 +16,8 @@ export class AppComponent {
   collapsed = true;
   account: Account;
 
-  constructor(private accountService: AccountService, private router: Router) { }
+  constructor(private accountService: AccountService, private router: Router, private titleService: Title) { 
+  }
 
   ngOnInit() {
     this.accountService.loggedEmitter
@@ -33,5 +35,9 @@ export class AppComponent {
   logout() {
     this.accountService.logout();
     this.router.navigate(['/']);
+  }
+
+  public setTitle( newTitle: string) {
+    this.titleService.setTitle( newTitle );
   }
 }

@@ -6,10 +6,10 @@ import { AccountService } from '../account.service';
 @Injectable()
 export class BaseService {
 
-  public URL = "https://api.themoviedb.org/3/";
+  // public URL = "https://api.themoviedb.org/3/";
+  public URL = "http://localhost:8080/";
   public URL_LOGIN = "https://r4mitdivdc.execute-api.us-east-1.amazonaws.com/dev";
 
-  // public API_KEY = "583aea9c82cd59697a0aa7b1dc106a21";
 
   public _httpClient: HttpClient;
   private account: AccountService;

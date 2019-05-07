@@ -3,21 +3,21 @@ import { HttpClient } from '@angular/common/http';
 import { BaseService } from '../services/base/base.service';
 
 @Injectable()
-export class SerieService extends BaseService {
+export class PessoaService extends BaseService {
 
   constructor(httpClient: HttpClient) {
     super(httpClient);
   }
 
   getTrending() {
-    return this._httpClient.get(`${this.URL}/tv/`)
+    return this._httpClient.get(`${this.URL}/person/`)
   }
 
   getById(id: string) {
-    return this._httpClient.get(`${this.URL}tv/findbyid?id=${id}`)
+    return this._httpClient.get(`${this.URL}person/findbyid?id=${id}`)
   }
 
   getSixTrending() {
-    return this._httpClient.get(`${this.URL}/tv/6trending`);
+    return this._httpClient.get(`${this.URL}/person/6trending`);
   }
 }

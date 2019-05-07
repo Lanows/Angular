@@ -1,0 +1,20 @@
+
+.img-banner {
+    width: 100%;
+    height: 130px;
+}
+
+#background {
+    width: 100%;
+    height: 110px;
+    background-position: 50%,50%;
+    background-image: url(../../assets/banner.jpg);
+}
+
+h1 {
+    color: #43CD80;
+}
+
+.card-img-overlay-bottom{
+    text-align: end;
+}

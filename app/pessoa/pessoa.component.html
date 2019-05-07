@@ -1,0 +1,10 @@
+<div class="col-12">
+    <div class="card-columns">
+      <div class="card bg-dark text-white" (click)="goEdit(pessoa)" *ngFor="let pessoa of pessoas">
+        <img class="card-img" src="https://image.tmdb.org/t/p/w250_and_h141_face{{ pessoa?.profilePath }}" alt="_blank" />
+        <div class="card-img-overlay-bottom">
+          <p class="card-title">{{ pessoa?.name }}</p>
+        </div>
+      </div>
+    </div>
+  </div>

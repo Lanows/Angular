@@ -14,9 +14,9 @@ export class SerieComponent implements OnInit {
   series = [];
 
   ngOnInit() {
-    this._serieService.getDiscover().subscribe(
+    this._serieService.getTrending().subscribe(
       response => {
-        this.series = response['results'];
+        this.series = response['content'];
       }
     )
   }

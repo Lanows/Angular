@@ -10,11 +10,19 @@ export class MovieService extends BaseService {
   }
 
 
-  getDiscover() {
-    return this._httpClient.get(`${this.URL}discover/movie?language=pt-BR`)
+  getTrending() {
+    return this._httpClient.get(`${this.URL}/movie/`)
   }
 
   getById(id: string) {
-    return this._httpClient.get(`${this.URL}movie/${id}?language=pt-BR`)
+    return this._httpClient.get(`${this.URL}movie/findbyid?id=${id}`)
   }
+
+  getSixTrending() {
+    return this._httpClient.get(`${this.URL}/movie/6trending`);
+  }
+
+  // getTrendingPage(page: number) {
+  //   return this._httpClient.get(`${this.URL}/movie/?size=5&page=${page}`)
+  // }
 }

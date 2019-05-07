@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-12 col-md-4">
     <div class="card">
-      <img class="card-img" src="https://image.tmdb.org/t/p/w300_and_h450_bestv2{{ movie.poster_path }}" alt="">
+      <img class="card-img" src="https://image.tmdb.org/t/p/w300_and_h450_bestv2{{ movie.backdropPath }}" alt="">
     </div>
   </div>
   &nbsp;
@@ -11,11 +11,17 @@
       <div class="card-header">
           <div class="row">
           <div class="col">
-              <h5 class="card-title">{{ movie?.original_name }} ({{ movie?.first_air_date | date: 'yyyy'}})</h5>
+              <h5 class="card-title">{{ movie?.title }} ({{ movie?.releaseDate | date: 'yyyy'}})</h5>
               </div>
-              <div class="col-4">
-                  <a [routerLink]="['editar']"><span class="btn btn-primary btn-sm float-right">Editar</span></a>
-              </div>
+              <div class="col-2">
+                <a [routerLink]="['editar']"><span class="btn btn-primary btn-sm float-right"><a id="btnText">Editar</a></span></a>
+            </div>
+            <div class="col-2.5">
+              <a [routerLink]="['editar']"><span class="btn btn-primary btn-sm float-right"><a id="btnText">Read Only</a></span></a>
+          </div>
+          <div class="col-2">
+            <a [routerLink]="['editar']"><span class="btn btn-primary btn-sm float-right"><a id="btnText">Deletar</a></span></a>
+        </div>
             </div>
           </div>
 
@@ -23,7 +29,7 @@
         <p class="card-title text-justify"><strong>Sinopse:</strong> {{ movie?.overview }}</p>
         <p><strong>Gêneros:</strong> </p>
         <div class="d-inline-block" *ngFor="let genre of movie?.genres">
-          <span class="badge badge-pill badge-primary">{{ genre?.name }}</span>
+          <span class="badge badge-pill badge-primary">{{ genre?.description }}</span>
         </div>
         <br /> <br />
         <p><strong>Produtoras:</strong> </p>

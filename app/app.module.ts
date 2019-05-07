@@ -1,10 +1,10 @@
 import { SerieService } from './serie/serie.service';
 import { MovieService } from './movie/movie.service';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, Title } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; // this is needed!
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +15,9 @@ import { JwtInterceptor } from './interceptors/jwt.interceptor';
 import { ErrorInterceptor } from './interceptors/error.interceptor';
 import { LoginComponent } from './login/login.component';
 import { EditarComponent } from './editar/editar.component';
+import { HomeComponent } from './home/home.component';
+import { PessoaComponent } from './pessoa/pessoa.component';
+import { PessoaService } from './pessoa/pessoa.service';
 
 
 
@@ -22,7 +25,8 @@ import { EditarComponent } from './editar/editar.component';
   declarations: [
     AppComponent,
     LoginComponent,
-    EditarComponent
+    EditarComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,6 +36,7 @@ import { EditarComponent } from './editar/editar.component';
     ReactiveFormsModule,
     HttpClientModule,
     NgbModule.forRoot(),
+    BrowserModule
   ],
   providers: [
     AccountService,
@@ -39,8 +44,9 @@ import { EditarComponent } from './editar/editar.component';
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
     MovieService,
-    SerieService
-
+    SerieService,
+    PessoaService,
+    Title
   ],
   bootstrap: [AppComponent]
 })

@@ -1,0 +1,47 @@
+<div class="row">
+    <div class="col-12 col-md-4">
+      <div class="card">
+        <img class="card-img" src="https://image.tmdb.org/t/p/w300_and_h450_bestv2{{ pessoa.profilePath }}" alt="">
+      </div>
+    </div>
+    &nbsp;
+    <div class="col-12 col-md-7">
+      <div class="card">
+  
+        <div class="card-header">
+            <div class="row">
+            <div class="col">
+                <h5 class="card-title">{{ pessoa?.name }}</h5>
+                </div>
+                <div class="col-2">
+                  <a [routerLink]="['editar']"><span class="btn btn-primary btn-sm float-right"><a id="btnText">Editar</a></span></a>
+              </div>
+              <div class="col-2.5">
+                <a [routerLink]="['editar']"><span class="btn btn-primary btn-sm float-right"><a id="btnText">Read Only</a></span></a>
+            </div>
+            <div class="col-2">
+              <a [routerLink]="['editar']"><span class="btn btn-primary btn-sm float-right"><a id="btnText">Deletar</a></span></a>
+          </div>
+              </div>
+            </div>
+  
+        <div class="card-body">
+          <p class="card-title text-justify"><strong>Gênero:</strong> {{ pessoa?.gender }}</p>
+          <p class="card-title text-justify"><strong>Altura:</strong> {{ pessoa?.height }}</p>
+          <p class="card-title text-justify"><strong>País:</strong> {{ pessoa?.hometown }}</p>
+          <p class="card-title text-justify"><strong>Cidade:</strong> {{ pessoa?.country }}</p>
+          <p><strong>Participações:</strong> </p>
+          <div class="d-inline-block" *ngFor="let participation of pessoa?.participations">
+            <span class="badge badge-pill badge-primary">{{ participation?.department }} em {{ participation?.id }}</span>
+            {{ participation?.program | json }}
+          </div>
+          <br /> <br />
+          <p><strong>Produtoras:</strong> </p>
+          <div class="d-inline-block" *ngFor="let company of movie?.production_companies">
+            <img src="https://image.tmdb.org/t/p/w50_and_h50_bestv2{{ company.logo_path }}" class="img-thumbnail"
+              alt="">&nbsp;
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

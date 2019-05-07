@@ -1,0 +1,68 @@
+<div class="container">
+  <br>
+  <div id="background">
+    <br><br>
+    <h1>Movies: </h1>
+  </div>
+  <div class="container">
+    <br>
+    <div class="col-12">
+      <div class="card-columns">
+        <div class="card bg-dark text-white" (click)="goEditMovie(movie)" *ngFor="let movie of movies">
+          <img class="card-img" src="https://image.tmdb.org/t/p/w250_and_h141_face{{ movie.backdropPath }}"
+            alt="_blank" />
+          <div class="card-img-overlay-bottom">
+            <p class="card-title">{{ movie.title }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<hr>
+<div class="container">
+
+  <div id="background">
+    <br><br>
+    <h1>Series: </h1>
+    <div class="container">
+      <br>
+
+      <div class="col-12">
+        <div class="card-columns">
+          <div class="card bg-dark text-white" (click)="goEditSerie(serie)" *ngFor="let serie of series">
+            <img class="card-img" src="https://image.tmdb.org/t/p/w250_and_h141_face{{ serie?.backdropPath  }}"
+              alt="_blank" />
+            <div class="card-img-overlay-bottom">
+              <p class="card-title">{{ serie?.title }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <hr>
+<div class="container">
+
+  <div id="background">
+    <br><br>
+    <h1>Pessoas: </h1>
+    <div class="container">
+      <br>
+
+      <div class="col-12">
+        <div class="card-columns">
+          <div class="card bg-dark text-white" (click)="goEditPessoa(pessoa)" *ngFor="let pessoa of pessoas">
+            <img class="card-img" src="https://image.tmdb.org/t/p/w250_and_h141_face{{ pessoa?.profilePath  }}"
+              alt="_blank" />
+            <div class="card-img-overlay">
+              <p class="card-title">{{ pessoa?.name }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->

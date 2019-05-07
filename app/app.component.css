@@ -1,11 +1,40 @@
 header.navbar {
-    background: linear-gradient(135deg, #0143a3, #0273d4);
+    background: linear-gradient(135deg, #363636, #778899);
   }
 
 .img-logo {
-    width:30px;
+    width:70px;
+}
+
+.img-logo-foot {
+  float: right;
+  width:130px;
 }
 
 .card {
   cursor: pointer;
+}
+
+#link {
+  font-size: 21px;
+  color: #43CD80;
+}
+
+footer.ul {
+  float: right;
+}
+
+#link-foot {
+  font-weight: bold;
+  font-size: 17px;
+  color: #01d277;
+}
+
+footer.navbar {
+  background: linear-gradient(135deg, #1d1f20, #363636);
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
 }
